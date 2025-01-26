@@ -20,11 +20,25 @@ const futureArenaElements = [
 ];
 
 // Загружаем количество голов Овечкина
+// async function getOvechkinGoals() {
+//     try {
+//         const response = await fetch(`${PROXY_URL}/player/8471214/landing`);
+//         const data = await response.json();
+//         return data.featuredStats?.regularSeason?.career?.goals || 0;
+//     } catch (error) {
+//         console.error("Ошибка при загрузке данных Овечкина:", error);
+//         return 0;
+//     }
+// }
+
 async function getOvechkinGoals() {
     try {
-        const response = await fetch(`${PROXY_URL}/player/8471214/landing`);
-        const data = await response.json();
-        return data.featuredStats?.regularSeason?.career?.goals || 0;
+        const response = await fetch('https://api-web.nhle.com/v1/player/8471214/landing', {
+            mode: 'no-cors' // Добавляем режим no-cors
+        });
+        // Вы не сможете получить данные из response
+        console.log(response); // Ответ будет "непрозрачным"
+        return 0; // Возвращаем заглушку, так как данные недоступны
     } catch (error) {
         console.error("Ошибка при загрузке данных Овечкина:", error);
         return 0;
@@ -32,11 +46,25 @@ async function getOvechkinGoals() {
 }
 
 // Загружаем расписание "Вашингтона"
+// async function getSchedule() {
+//     try {
+//         const response = await fetch(`${PROXY_URL}/club-schedule/${WASHINGTON_CAPITALS_TEAM_ID}/20242025`);
+//         const data = await response.json();
+//         return data.games || [];
+//     } catch (error) {
+//         console.error("Ошибка при загрузке расписания:", error);
+//         return [];
+//     }
+// }
+
 async function getSchedule() {
     try {
-        const response = await fetch(`${PROXY_URL}/club-schedule/${WASHINGTON_CAPITALS_TEAM_ID}/20242025`);
-        const data = await response.json();
-        return data.games || [];
+        const response = await fetch('https://api-web.nhle.com/v1/club-schedule/WSH/20242025', {
+            mode: 'no-cors' // Добавляем режим no-cors
+        });
+        // Вы не сможете получить данные из response
+        console.log(response); // Ответ будет "непрозрачным"
+        return []; // Возвращаем заглушку, так как данные недоступны
     } catch (error) {
         console.error("Ошибка при загрузке расписания:", error);
         return [];
