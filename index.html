@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ovechkin vs Gretzky</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="player player1">
+            <img src="ovechkin.jpg" alt="Alexander Ovechkin">
+            <div class="score" id="score1">Loading...</div>
+        </div>
+        <div class="vs">VS</div>
+        <div class="player player2">
+            <img src="gretzky.jpg" alt="Wayne Gretzky">
+            <div class="score" id="score2">894</div>
+        </div>
+    </div>
+
+    <div class="arena-posible">
+        <div class="arena-posible-title" id="arena-posible-title">Possible date and location if Ovechkin scores one goal per game</div>
+    </div>
+
+    <!-- Информация об арене -->
+    <div class="arena-info">
+        <div class="arena-name" id="arena-name">Loading...</div>
+        <div class="arena-date" id="arena-date">Loading...</div>
+        <div class="arena-address" id="arena-address">Loading...</div>
+        <div class="arena-teams" id="arena-teams"></div>
+    </div>
+
+    <!-- Карусель -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="arena past-arena1" id="past-arena1">
+                <div class="arena-label">
+                    <div class="arena-label-date" id="past-arena1-date"></div>
+                    <div class="arena-label-name" id="past-arena1-name"></div>
+                </div>
+                <img src="" alt="Past Arena 1">
+            </div>
+            <div class="arena past-arena2" id="past-arena2">
+                <div class="arena-label">
+                    <div class="arena-label-date" id="past-arena2-date"></div>
+                    <div class="arena-label-name" id="past-arena2-name"></div>
+                </div>
+                <img src="" alt="Past Arena 2">
+            </div>
+            <div class="arena center-arena" id="current-arena">
+                <img src="" alt="Current Arena">
+            </div>
+            <div class="arena future-arena1" id="future-arena1">
+                <div class="arena-label">
+                    <div class="arena-label-date" id="future-arena1-date"></div>
+                    <div class="arena-label-name" id="future-arena1-name"></div>
+                </div>
+                <img src="" alt="Future Arena 1">
+            </div>
+            <div class="arena future-arena2" id="future-arena2">
+                <div class="arena-label">
+                    <div class="arena-label-date" id="future-arena2-date"></div>
+                    <div class="arena-label-name" id="future-arena2-name"></div>
+                </div>
+                <img src="" alt="Future Arena 2">
+            </div>
+        </div>
+    </div>
+
+    <!-- Кнопка "Buy tickets" -->
+    <a href="#" id="ticket-link" class="buy-tickets-button" target="_blank">
+        Buy Tickets
+    </a>
+
+    <!-- Скрипт -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>

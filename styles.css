@@ -1,0 +1,219 @@
+body {
+    background-color: #1a1a1a; /* Фоновый цвет на случай, если изображение не загрузится */
+    color: #ffffff;
+    font-family: 'Arvo', serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Для позиционирования псевдоэлемента */
+    min-height: 100vh; /* Минимальная высота для скролла */
+}
+
+/* Псевдоэлемент для фонового изображения */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bg.webp'); /* Путь к изображению */
+    background-size: cover; /* Растягиваем изображение на весь экран */
+    background-position: center; /* Центрируем изображение */
+    opacity: 0.05; /* Непрозрачность */
+    z-index: -1; /* Отправляем фон на задний план */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.player {
+    text-align: center;
+    margin: 20px 20px;
+}
+
+.player img {
+    width: 200px; /* Фиксированная ширина */
+    height: 200px; /* Фиксированная высота */
+    border-radius: 10px;
+    object-fit: cover; /* Сохраняет пропорции и заполняет область */
+}
+
+.vs {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ff0000;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.score {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #ffcc00;
+}
+
+.arena-posible {
+    text-align: center;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    z-index: 2;
+}
+
+.arena-posible div {
+    margin: 10px 10px;
+}
+
+.arena-posible-title {
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.arena-info {
+    text-align: center;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    z-index: 2;
+}
+
+.arena-info div {
+    margin: 0px 10px;
+}
+
+.arena-name {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.arena-date {
+    font-size: 20px;
+}
+
+.arena-address {
+    font-size: 14px;
+}
+
+.arena-teams {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.arena-teams img {
+    width: 60px;
+    height: auto;
+    margin: 10px 10px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100vw;
+    height: 300px;
+    overflow: hidden;
+    margin-top: 20px;
+    z-index: 1;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.arena {
+    opacity: 0.5;
+    transition: opacity 0.5s, transform 0.5s;
+    flex: 0 0 15vw;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.arena img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.center-arena {
+    opacity: 1;
+    transform: scale(1);
+    flex: 0 0 30vw;
+    height: 100%;
+}
+
+.past-arena2 {
+    transform: scale(0.7); /* Масштаб для past-arena1 */
+    opacity: 0.5;
+}
+
+.past-arena1 {
+    transform: scale(0.6); /* Масштаб для past-arena2 (меньше, чем past-arena1) */
+    opacity: 0.3;
+}
+
+.future-arena1 {
+    transform: scale(0.7); /* Масштаб для future-arena1 */
+    opacity: 0.5;
+}
+
+.future-arena2 {
+    transform: scale(0.6); /* Масштаб для future-arena2 (меньше, чем future-arena1) */
+    opacity: 0.3;
+}
+
+.arena-label {
+    position: absolute;
+    top: -40px; /* Расположение над изображением */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2;
+}
+
+.arena-label-date,
+.arena-label-name {
+    font-size: 12px; /* Маленький шрифт */
+    color: #ffffff;
+    white-space: nowrap; /* Текст в одну строку */
+}
+
+.arena-label-date {
+    font-weight: bold;
+}
+
+.arena-label-name {
+    font-weight: lighter;
+}
+
+.buy-tickets-button {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #ff0000;
+    border-radius: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.buy-tickets-button:hover {
+    background-color: #cc0000; /* Цвет при наведении */
+}
