@@ -2,7 +2,7 @@ import arenas from './arenas.js';
 
 const GRETZKY_GOALS = 894;
 const WASHINGTON_CAPITALS_TEAM_ID = "WSH";
-const PROXY_URL = "https://api-web.nhle.com/v1";
+const PROXY_URL = "https://ovi-record-5nokiqzs6-dmitrii-kuklins-projects.vercel.app/api/proxy";
 
 const arenaTeamsElement = document.getElementById("arena-teams");
 const score1Element = document.getElementById("score1");
