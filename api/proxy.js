@@ -2,6 +2,16 @@
 const fetch = require('node-fetch');
 
 module.exports = async (req, res) => {
+    // Разрешаем запросы с любого домена (или укажите конкретный домен)
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    // Обрабатываем OPTIONS-запросы для CORS
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
+
     const { path } = req.query; // Получаем путь из запроса
 
     if (!path) {
