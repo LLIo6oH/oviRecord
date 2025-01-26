@@ -21,7 +21,7 @@ const futureArenaElements = [
 
 async function getOvechkinGoals() {
     try {
-        const response = await fetch(`/api/proxy?path=/v1/player/8471214/landing`);
+        const response = await fetch(`${PROXY_URL}?path=/v1/player/8471214/landing`);
         const data = await response.json();
         return data.featuredStats?.regularSeason?.career?.goals || 0;
     } catch (error) {
@@ -32,7 +32,7 @@ async function getOvechkinGoals() {
 
 async function getSchedule() {
     try {
-        const response = await fetch(`/api/proxy?path=/v1/club-schedule/WSH/20242025`);
+        const response = await fetch(`${PROXY_URL}?path=/v1/club-schedule/WSH/20242025`);
         const data = await response.json();
         return data.games || [];
     } catch (error) {
